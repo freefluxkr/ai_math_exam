@@ -17,7 +17,7 @@
 
   const LS_KEYS = {
     SUBMISSIONS: 'dmdg_ai_math_exam_submissions_v1',
-    SETTINGS: 'dmdg_ai_math_exam_settings_v1',
+    SETTINGS: 'dmdg_ai_math_exam_settings_v2',
     CUSTOM_QUESTIONS: 'dmdg_ai_math_exam_custom_questions_v1',
     DEVICE_ID: 'dmdg_ai_math_exam_device_id_v1',
     ACTIVE_SESSION: 'dmdg_ai_math_exam_active_session_v1',
@@ -28,7 +28,7 @@
     '백선병', '신상아', '오주원', '이인애', '정호연', '조진훈'
   ];
 
-  const ALLOWED_EXAM_DATE = '2026-11-05';
+  const ALLOWED_EXAM_DATE = '2026-11-09';
 
   const DEFAULT_SETTINGS = {
     examTitle: 'AI & LLM 사전 학습(수학·기초 엔지니어링) 역량 평가 (총 75문항)',
@@ -37,7 +37,7 @@
     shuffleQuestions: true,     // 응시자마다 문제 순서 섞기
     blockDuplicateDevice: true, // 동일인(동일 이름 또는 동일 기기) 재응시 차단
     enforceAllowedStudents: true, // 12명 지정 명단 외 응시 불가
-    enforceExamDate: true,      // 2026-11-05 당일만 응시 허용
+    enforceExamDate: true,      // 2026-11-09 당일만 응시 허용
     allowedExamDate: ALLOWED_EXAM_DATE,
     allowedStudents: ALLOWED_STUDENTS,
     examOpen: true,             // 시험 응시 열림/닫힘
