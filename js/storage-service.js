@@ -23,12 +23,23 @@
     ACTIVE_SESSION: 'dmdg_ai_math_exam_active_session_v1',
   };
 
+  const ALLOWED_STUDENTS = [
+    '구명회', '김윤준', '김제형', '김지선', '남유진', '방호원',
+    '백선병', '신상아', '오주원', '이인애', '정호연', '조진훈'
+  ];
+
+  const ALLOWED_EXAM_DATE = '2026-11-05';
+
   const DEFAULT_SETTINGS = {
     examTitle: 'AI & LLM 사전 학습(수학·기초 엔지니어링) 역량 평가 (총 75문항)',
     choiceTimeLimit: 60,        // 객관식 1문항 1분 (60초)
     passScore: 80,              // 합격 기준 점수 (100점 환산 기준 80점)
     shuffleQuestions: true,     // 응시자마다 문제 순서 섞기
     blockDuplicateDevice: true, // 동일인(동일 이름 또는 동일 기기) 재응시 차단
+    enforceAllowedStudents: true, // 12명 지정 명단 외 응시 불가
+    enforceExamDate: true,      // 2026-11-05 당일만 응시 허용
+    allowedExamDate: ALLOWED_EXAM_DATE,
+    allowedStudents: ALLOWED_STUDENTS,
     examOpen: true,             // 시험 응시 열림/닫힘
     showExplanationOnResult: true,
     updatedAt: new Date().toISOString(),
@@ -480,6 +491,8 @@
 
   global.SqlExamStorage = {
     CATEGORIES: CATEGORIES,
+    ALLOWED_STUDENTS: ALLOWED_STUDENTS,
+    ALLOWED_EXAM_DATE: ALLOWED_EXAM_DATE,
     getDeviceId: getDeviceId,
     getSettings: getSettings,
     fetchSettingsFromCloud: fetchSettingsFromCloud,

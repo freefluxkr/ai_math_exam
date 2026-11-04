@@ -107,6 +107,22 @@
     showToast('[' + shortName + ' - 객관식 15문항] 구성이 선택되었습니다. 이름을 입력하고 시작하세요!');
   }
 
+  const ALLOWED_STUDENTS = [
+    '구명회', '김윤준', '김제형', '김지선', '남유진', '방호원',
+    '백선병', '신상아', '오주원', '이인애', '정호연', '조진훈'
+  ];
+  const ALLOWED_EXAM_DATE = '2026-11-05';
+
+  function getKstDateString() {
+    try {
+      const now = new Date();
+      const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+      return kstTime.toISOString().slice(0, 10);
+    } catch (_) {
+      return new Date().toISOString().slice(0, 10);
+    }
+  }
+
   async function startExamSession() {
     const errorEl = document.getElementById('start-error-msg');
     if (errorEl) errorEl.classList.add('hidden');
@@ -122,7 +138,36 @@
       return;
     }
 
+    const normalizedInputName = studentName.replace(/\s+/g, '');
     const settings = await global.SqlExamStorage.fetchSettingsFromCloud();
+
+    // 1. 12명 지정 응시자 명단 검증 (구명회, 김윤준, 김제형, 김지선, 남유진, 방호원, 백선병, 신상아, 오주원, 이인애, 정호연, 조진훈)
+    const allowedList = Array.isArray(settings.allowedStudents) && settings.allowedStudents.length > 0
+      ? settings.allowedStudents
+      : ALLOWED_STUDENTS;
+    if (settings.enforceAllowedStudents !== false) {
+      if (!allowedList.includes(normalizedInputName)) {
+        if (errorEl) {
+          errorEl.textContent = '⛔ 등록된 응시자 명단(12명) 이외의 사람은 응시할 수 없습니다. 성명을 정확히 입력해 주세요.';
+          errorEl.classList.remove('hidden');
+        }
+        showToast('⛔ 응시자 명단에 등록되지 않은 성명입니다.');
+        return;
+      }
+    }
+
+    // 2. 응시 지정일 (2026-11-05 하루만) 검증
+    const targetDate = settings.allowedExamDate || ALLOWED_EXAM_DATE;
+    const todayKst = getKstDateString();
+    if (settings.enforceExamDate !== false && todayKst !== targetDate) {
+      if (errorEl) {
+        errorEl.textContent = '⛔ 본 평가는 지정된 시험일(2026.11.05 하루만)에만 응시 가능합니다. (현재 한국 시각 기준 일자: ' + todayKst + ')';
+        errorEl.classList.remove('hidden');
+      }
+      showToast('⛔ 2026.11.05 당일에만 응시할 수 있습니다.');
+      return;
+    }
+
     if (!settings.examOpen) {
       if (errorEl) {
         errorEl.textContent = '현재 관리자에 의해 시험 응시가 일시 마감되었습니다.';

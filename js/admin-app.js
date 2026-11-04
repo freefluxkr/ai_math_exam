@@ -640,6 +640,10 @@
     document.getElementById('set-pass-score').value = s.passScore || 80;
     document.getElementById('set-shuffle').checked = s.shuffleQuestions !== false;
     document.getElementById('set-block-dup').checked = s.blockDuplicateDevice !== false;
+    const elStudents = document.getElementById('set-enforce-students');
+    if (elStudents) elStudents.checked = s.enforceAllowedStudents !== false;
+    const elDate = document.getElementById('set-enforce-date');
+    if (elDate) elDate.checked = s.enforceExamDate !== false;
     document.getElementById('set-exam-open').checked = s.examOpen !== false;
   }
 
@@ -648,6 +652,10 @@
     const passScore = Math.max(10, Math.min(100, Number(document.getElementById('set-pass-score').value) || 80));
     const shuffleQuestions = document.getElementById('set-shuffle').checked;
     const blockDuplicateDevice = document.getElementById('set-block-dup').checked;
+    const elStudents = document.getElementById('set-enforce-students');
+    const enforceAllowedStudents = elStudents ? elStudents.checked : true;
+    const elDate = document.getElementById('set-enforce-date');
+    const enforceExamDate = elDate ? elDate.checked : true;
     const examOpen = document.getElementById('set-exam-open').checked;
 
     await global.SqlExamStorage.saveSettings({
@@ -655,6 +663,8 @@
       passScore: passScore,
       shuffleQuestions: shuffleQuestions,
       blockDuplicateDevice: blockDuplicateDevice,
+      enforceAllowedStudents: enforceAllowedStudents,
+      enforceExamDate: enforceExamDate,
       examOpen: examOpen,
     });
 

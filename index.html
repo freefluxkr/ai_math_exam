@@ -266,6 +266,15 @@
             <p class="text-xs text-slate-400 mb-5">성명을 입력하고 응시할 파트(15문항 또는 전체 75문항)를 선택하세요.</p>
 
             <form id="start-exam-form" onsubmit="event.preventDefault(); startExamSession();" class="space-y-4">
+              <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl px-3.5 py-2.5 text-xs text-amber-200 space-y-1">
+                <div class="font-bold flex items-center gap-1.5 text-amber-300">
+                  <i class="fa-solid fa-calendar-check"></i> 응시 가능일 및 대상자 제한 안내
+                </div>
+                <p class="text-[11px] text-slate-300 leading-relaxed">
+                  • <strong>응시 가능일:</strong> <span class="text-amber-300 font-bold">2026. 11. 05 (하루만)</span><br>
+                  • <strong>응시 대상 (12명):</strong> 구명회, 김윤준, 김제형, 김지선, 남유진, 방호원, 백선병, 신상아, 오주원, 이인애, 정호연, 조진훈 <span class="text-rose-300">(명단 외 응시 불가)</span>
+                </p>
+              </div>
               <div>
                 <label for="input-student-name" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
                   응시자 성명 <span class="text-rose-400">*</span>
