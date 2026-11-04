@@ -1,0 +1,1427 @@
+[
+  {
+    "id": "P1-C-01",
+    "no": 1,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 01",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "딥러닝 이미지 처리에서 배치 크기(Batch)가 32이고, 해상도가 224×224인 RGB 컬러 이미지 묶음을 표현하는 텐서(Tensor)의 차원(Rank)과 형상(Shape)으로 가장 올바른 것은?",
+    "description": "※ 채널 우선(Channel-Last, NHWC) 표준 표기법을 기준으로 한다.",
+    "options": [
+      "2차원 행렬(Matrix) — Shape: (32, 150528)",
+      "3차원 텐서(3D Tensor) — Shape: (224, 224, 3)",
+      "4차원 텐서(4D Tensor) — Shape: (32, 224, 224, 3)",
+      "5차원 텐서(5D Tensor) — Shape: (32, 1, 224, 224, 3)"
+    ],
+    "answer": 3,
+    "explanation": "단일 컬러 이미지는 높이(H)×너비(W)×채널(C)의 3차원 텐서(224, 224, 3)이며, 이를 배치 크기(N=32)만큼 묶으면 (32, 224, 224, 3)의 4차원 텐서(Rank-4 Tensor)가 됩니다."
+  },
+  {
+    "id": "P1-C-02",
+    "no": 2,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 01",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "2차원 실수 공간에서 벡터 x = [3, -4]^T 가 주어졌을 때, 이 벡터의 L1 노름(맨해튼 노름)과 L2 노름(유클리디안 노름)을 순서대로 바르게 계산한 것은?",
+    "description": "L1 노름: ||x||_1 = Σ|x_i|  /  L2 노름: ||x||_2 = sqrt(Σ x_i^2)",
+    "options": [
+      "L1 노름 = 7, L2 노름 = 5",
+      "L1 노름 = 5, L2 노름 = 7",
+      "L1 노름 = -1, L2 노름 = 5",
+      "L1 노름 = 7, L2 노름 = 25"
+    ],
+    "answer": 1,
+    "explanation": "L1 노름은 각 성분 절댓값의 합이므로 |3| + |-4| = 7이며, L2 노름은 각 성분 제곱합의 제곱근이므로 sqrt(3^2 + (-4)^2) = sqrt(9 + 16) = 5입니다."
+  },
+  {
+    "id": "P1-C-03",
+    "no": 3,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 01",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "CNN 합성곱 계층을 통과한 특성 맵(Feature Map)의 형상이 (Batch=16, Height=7, Width=7, Channels=64)일 때, 이를 완전연결계층(Dense Layer)에 입력하기 위해 배치 축을 유지한 채 평탄화(Flatten)한 결과 형상은?",
+    "description": "",
+    "options": [
+      "(16, 49)",
+      "(16, 448)",
+      "(16, 3136)",
+      "(50176, 1)"
+    ],
+    "answer": 3,
+    "explanation": "배치 크기(16)는 그대로 유지하고 공간 및 채널 차원(7 × 7 × 64 = 3,136)을 하나의 1차원 특징 벡터로 펼치므로 결과 형상은 (16, 3136)이 됩니다."
+  },
+  {
+    "id": "P1-C-04",
+    "no": 4,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 01",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "L1 노름과 L2 노름의 기하학적 등고선(Unit Ball) 형태와 이상치(Outlier) 민감도에 대한 설명으로 가장 적절한 것은?",
+    "description": "",
+    "options": [
+      "L1 노름의 단위 등고선은 원(Circle) 모양이며, 축 위에서 미분 가능하다.",
+      "L2 노름은 오차나 성분을 제곱하므로 L1 노름에 비해 큰 이상치(Outlier)에 훨씬 민감하게 반응한다.",
+      "L1 노름은 큰 값에 제곱 페널티를 부여하므로 이상치에 매우 취약하다.",
+      "L2 노름의 단위 등고선은 마름모(Diamond) 형태이며 꼭짓점에서 해가 0이 되는 성질이 강하다."
+    ],
+    "answer": 2,
+    "explanation": "L1 노름의 등고선은 마름모(Diamond) 모양으로 꼭짓점이 좌표축에 위치해 희소 해(Sparsity)를 유도하며, L2 노름은 원(Circle) 모양이고 성분을 제곱하므로 값이 큰 이상치(Outlier)에 훨씬 민감합니다."
+  },
+  {
+    "id": "P1-C-05",
+    "no": 5,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 02",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "두 임베딩 벡터 a = [1, 2, -1]^T 와 b = [2, 0, 2]^T 의 내적(Dot Product, a · b) 값과 두 벡터 사이의 기하학적 관계로 올바른 것은?",
+    "description": "",
+    "options": [
+      "내적 = 4, 두 벡터는 예각(0° < θ < 90°)을 이룬다.",
+      "내적 = 0, 두 벡터는 서로 직교(Orthogonal, θ = 90°)한다.",
+      "내적 = -4, 두 벡터는 둔각(90° < θ < 180°)을 이룬다.",
+      "내적 = 1, 두 벡터는 완전히 동일한 방향(θ = 0°)을 가리킨다."
+    ],
+    "answer": 2,
+    "explanation": "a · b = (1)(2) + (2)(0) + (-1)(2) = 2 + 0 - 2 = 0입니다. 영벡터가 아닌 두 벡터의 내적이 0이면 cos(θ) = 0이므로 두 벡터는 수직(직교, θ = 90°) 관계입니다."
+  },
+  {
+    "id": "P1-C-06",
+    "no": 6,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 02",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM 기반 RAG(검색 증강 생성) 시스템에서 문서 길이에 따른 벡터 크기(Magnitude) 편향을 제거하고 오직 의미적 방향성만으로 유사도를 측정하기 위해 사용하는 지표는?",
+    "description": "",
+    "options": [
+      "유클리디안 거리 (Euclidean Distance)",
+      "맨해튼 거리 (Manhattan Distance)",
+      "코사인 유사도 (Cosine Similarity)",
+      "해밍 거리 (Hamming Distance)"
+    ],
+    "answer": 3,
+    "explanation": "코사인 유사도는 두 벡터의 내적을 각 벡터의 L2 노름 곱으로 나누어 정규화(a·b / (||a||_2 ||b||_2))하므로, 벡터의 절대 길이와 무관하게 두 임베딩이 가리키는 의미 방향의 일치도를 [-1, 1] 범위로 측정합니다."
+  },
+  {
+    "id": "P1-C-07",
+    "no": 7,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 02",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "벡터 DB(Pinecone, Milvus, FAISS 등)에 모든 임베딩 벡터를 저장하기 전에 L2 노름이 1이 되도록 단위 벡터로 사전 정규화(L2 Normalization)해 두었을 때 얻는 연산상의 이점은?",
+    "description": "",
+    "options": [
+      "코사인 유사도 계산이 분모 나눗셈 없는 단순 내적(Inner Product) 연산과 완전히 동일해져 검색 속도가 비약적으로 빨라진다.",
+      "벡터의 차원 수(Dimension)가 자동으로 절반으로 줄어들어 메모리 사용량이 50% 감소한다.",
+      "모든 벡터 성분이 정수(Integer)로 변환되어 부동소수점 오차가 사라진다.",
+      "서로 다른 언어 모델에서 추출한 임베딩끼리 차원 변환 없이 바로 덧셈이 가능해진다."
+    ],
+    "answer": 1,
+    "explanation": "||a||_2 = 1 이고 ||b||_2 = 1 인 단위 벡터들의 코사인 유사도는 cos(θ) = (a · b) / (1 × 1) = a · b 가 되어, 고비용 제곱근 및 나눗셈 없이 고속 행렬 내적(MIPS)만으로 동일한 순위를 얻을 수 있습니다."
+  },
+  {
+    "id": "P1-C-08",
+    "no": 8,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 03",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "행렬 A의 형상이 (128, 768)이고 행렬 B와의 행렬 곱 C = A @ B 의 결과 형상이 (128, 256)이 되기 위한 행렬 B의 형상(Shape)은?",
+    "description": "",
+    "options": [
+      "(128, 256)",
+      "(256, 768)",
+      "(768, 256)",
+      "(768, 128)"
+    ],
+    "answer": 3,
+    "explanation": "행렬 곱 (m × k) @ (k × n) = (m × n) 차원 정합성 법칙에 의해, A가 (128, 768)이고 결과 C가 (128, 256)이 되려면 B의 내부 차원은 768, 출력 차원은 256인 (768, 256)이어야 합니다."
+  },
+  {
+    "id": "P1-C-09",
+    "no": 9,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 03",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "트랜스포머(Transformer)의 Scaled Dot-Product Attention 수식 Attention(Q, K, V) = softmax((Q K^T) / sqrt(d_k)) V 에서 내적 행렬 Q K^T 를 sqrt(d_k)로 나누어 주는 핵심 수학적 이유는?",
+    "description": "",
+    "options": [
+      "행렬 K의 전치 연산에서 발생하는 메모리 복사를 줄이기 위해서이다.",
+      "차원 d_k가 커질수록 내적 값의 분산이 d_k배로 커져 Softmax 함수가 극단값(0 또는 1)으로 포화되고 기울기 소실(Vanishing Gradient)이 발생하는 것을 막기 위해서이다.",
+      "Query와 Value 벡터의 차원 수를 강제로 일치시키기 위해서이다.",
+      "음수 내적 값을 모두 양수로 변환하여 ReLU 활성화를 대체하기 위해서이다."
+    ],
+    "answer": 2,
+    "explanation": "Q와 K의 각 성분이 평균 0, 분산 1인 독립 확률변수일 때 내적 Q K^T 의 평균은 0이지만 분산은 d_k가 됩니다. 이를 표준편차인 sqrt(d_k)로 나누어야 분산이 다시 1로 유지되어 Softmax 기울기 소실을 방지합니다."
+  },
+  {
+    "id": "P1-C-10",
+    "no": 10,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 03",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "시퀀스 길이(토큰 수)가 L=10이고 어텐션 헤드 차원이 d_k=64일 때, 단일 헤드 내에서 Q(10×64)와 K^T(64×10)를 곱해 생성되는 어텐션 스코어 행렬(Attention Score Matrix)의 형상은?",
+    "description": "",
+    "options": [
+      "(10, 10)",
+      "(64, 64)",
+      "(10, 64)",
+      "(64, 10)"
+    ],
+    "answer": 1,
+    "explanation": "Q(L × d_k) @ K^T(d_k × L) 연산의 결과는 (L × L) = (10, 10) 행렬이 되며, 각 원소 (i, j)는 i번째 토큰이 j번째 토큰에 부여하는 어텐션 유사도 점수를 의미합니다."
+  },
+  {
+    "id": "P1-C-11",
+    "no": 11,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 03",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "2차원 평면의 벡터에 대각행렬 A = [[2, 0], [0, 0.5]] 를 곱하는 선형 변환 T(x) = Ax 가 기하학적으로 수행하는 공간 변형은?",
+    "description": "",
+    "options": [
+      "원점을 기준으로 반시계 방향으로 90도 회전시킨다.",
+      "x축 방향으로는 2배 늘리고(Stretch), y축 방향으로는 0.5배로 압축(Compress)한다.",
+      "x축과 y축을 서로 대칭 반전(Reflection)시킨다.",
+      "모든 벡터를 원점 [0, 0]으로 사영(Projection)시킨다."
+    ],
+    "answer": 2,
+    "explanation": "대각 성분만 존재하는 대각행렬 [[2, 0], [0, 0.5]]는 기저 벡터의 회전 없이 첫 번째 축(x축) 스케일을 2배 확대하고 두 번째 축(y축) 스케일을 0.5배 축소합니다."
+  },
+  {
+    "id": "P1-C-12",
+    "no": 12,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 04",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "정방행렬 A에 대하여 Av = λv (단, v ≠ 0)를 만족하는 스칼라 λ와 벡터 v에 대한 설명으로 가장 올바른 것은?",
+    "description": "",
+    "options": [
+      "선형 변환 A를 가해도 벡터 v는 방향이 바뀌지 않고 오직 크기만 λ배(부호 포함)로 스케일링되며, v를 고유벡터, λ를 고유값이라 한다.",
+      "행렬 A가 비정방행렬(m ≠ n)일 때만 고유값 λ가 정의된다.",
+      "고유벡터 v는 항상 영벡터(Zero Vector)여야만 수식이 성립한다.",
+      "고유값 λ는 항상 1보다 큰 양의 실수만 가질 수 있다."
+    ],
+    "answer": 1,
+    "explanation": "고유벡터(Eigenvector) v는 선형 변환 A에 의해 방향이 회전하지 않고 본래의 축을 유지하는 불변 방향 벡터이며, 고유값(Eigenvalue) λ는 그 축 방향으로 얼마나 늘어나거나 줄어드는지를 나타내는 스케일 계수입니다."
+  },
+  {
+    "id": "P1-C-13",
+    "no": 13,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 04",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "주성분 분석(PCA, Principal Component Analysis)에서 데이터의 정보 손실을 최소화하는 제1주성분(PC1) 축을 찾는 수학적 원리로 가장 정확한 것은?",
+    "description": "",
+    "options": [
+      "데이터의 공분산 행렬(Covariance Matrix)에서 고유값(Eigenvalue)이 가장 작은 고유벡터 방향을 선택한다.",
+      "데이터를 정사영했을 때 분산(Variance)이 최대가 되는 방향, 즉 공분산 행렬의 가장 큰 고유값에 대응하는 고유벡터를 선택한다.",
+      "결측치(NaN)의 개수가 가장 많은 변수 축을 그대로 제1주성분으로 삼는다.",
+      "타깃 정답 레이블(y)과의 상관계수가 가장 높은 축을 지도학습 방식으로 탐색한다."
+    ],
+    "answer": 2,
+    "explanation": "PCA는 비지도 차원 축소 기법으로, 데이터를 투영했을 때 퍼짐 정도(분산)를 최대화하는 직교 축을 찾습니다. 이는 데이터 공분산 행렬의 최대 고유값에 대응하는 고유벡터와 수학적으로 일치합니다."
+  },
+  {
+    "id": "P1-C-14",
+    "no": 14,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 04",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "임의의 m × n 행렬 M을 M = U Σ V^T 의 세 행렬 곱으로 분해하는 특잇값 분해(SVD, Singular Value Decomposition)에 관한 설명으로 옳지 않은 것은?",
+    "description": "",
+    "options": [
+      "행렬 M이 정방행렬이 아닌 직사각 행렬(m ≠ n)이어도 항상 분해가 가능하다.",
+      "U와 V는 열벡터들이 서로 수직이고 크기가 1인 직교 행렬(Orthogonal Matrix)이다.",
+      "Σ(시그마)의 대각 성분인 특잇값(Singular Values) 중 상위 k개만 남기는 절단형 SVD(Truncated SVD)를 통해 행렬을 저랭크(Low-Rank)로 압축할 수 있다.",
+      "특잇값(Singular Value)은 항상 음수(-) 값으로만 구성된다."
+    ],
+    "answer": 4,
+    "explanation": "특잇값 σ_i 는 M^T M 의 비음수 고유값들의 제곱근(sqrt(λ_i))으로 정의되므로 항상 0 이상의 실수(σ_1 ≥ σ_2 ≥ ... ≥ 0)입니다."
+  },
+  {
+    "id": "P1-C-15",
+    "no": 15,
+    "category": "선형대수학: 인공지능의 다차원 공간 언어",
+    "chapter": "Day 04",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "거대언어모델(LLM) 파인튜닝 기법인 LoRA(Low-Rank Adaptation)에서 사전학습된 가중치 변화량 ΔW ∈ R^(4096 × 4096)를 랭크 r=8인 두 행렬 B ∈ R^(4096 × 8), A ∈ R^(8 × 4096)의 곱(ΔW = B @ A)으로 근사할 때 학습 파라미터 수의 변화는?",
+    "description": "",
+    "options": [
+      "약 1,677만 개(4096×4096)에서 65,536개(2×4096×8)로 줄어들어 약 99.6%의 학습 파라미터가 절감된다.",
+      "행렬이 2개로 늘어났으므로 학습 파라미터 수가 기존의 2배로 증가한다.",
+      "학습 파라미터 수는 동일하지만 행렬 덧셈만 생략된다.",
+      "오직 8개의 스칼라 파라미터만 학습하면 된다."
+    ],
+    "answer": 1,
+    "explanation": "원래 가중치 행렬은 4,096 × 4,096 = 16,777,216개의 파라미터가 필요하지만, 랭크 r=8인 두 저랭크 행렬 B(4096×8)와 A(8×4096)로 분해하면 총 32,768 + 32,768 = 65,536개만 학습하면 되어 메모리를 극적으로 아낄 수 있습니다."
+  },
+  {
+    "id": "P2-C-01",
+    "no": 16,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 05",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "다변수 이차 손실 함수 f(w1, w2) = 3*(w1)^2 + 2*w1*w2 + (w2)^2 에 대하여 점 (w1, w2) = (1, 2) 에서의 그래디언트 벡터 ∇f(1, 2) = [∂f/∂w1, ∂f/∂w2]^T 를 구한 값은?",
+    "description": "편미분 시 대상 변수 외의 다른 변수는 상수로 취급한다.",
+    "options": [
+      "[6, 4]^T",
+      "[10, 6]^T",
+      "[8, 5]^T",
+      "[12, 2]^T"
+    ],
+    "answer": 2,
+    "explanation": "∂f/∂w1 = 6*w1 + 2*w2 이고, ∂f/∂w2 = 2*w1 + 2*w2 입니다. 여기에 (w1=1, w2=2)를 대입하면 ∂f/∂w1 = 6(1) + 2(2) = 10, ∂f/∂w2 = 2(1) + 2(2) = 6 이므로 ∇f(1, 2) = [10, 6]^T 입니다."
+  },
+  {
+    "id": "P2-C-02",
+    "no": 17,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 05",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "경사하강법(Gradient Descent)의 가중치 업데이트 수식 w_(t+1) = w_t - η ∇L(w_t) 에서 그래디언트(∇L) 앞에 마이너스(-) 부호를 붙이는 수학적 이유로 가장 정확한 것은?",
+    "description": "단, η(에타)는 양의 학습률(Learning Rate)이다.",
+    "options": [
+      "그래디언트 벡터 ∇L은 함수 값이 가장 가파르게 증가(최대 상승)하는 방향을 가리키므로, 손실(Loss)을 최소화하려면 그 반대 방향으로 이동해야 하기 때문이다.",
+      "가중치 w가 항상 음수 값을 유지하도록 강제하기 위해서이다.",
+      "미분 계수의 부동소수점 반올림 오차를 상쇄하기 위해서이다.",
+      "학습률 η가 음수이기 때문에 부호를 양수로 맞추기 위해서이다."
+    ],
+    "answer": 1,
+    "explanation": "방향도함수 정리에 의해 그래디언트 벡터 ∇L(w)는 현재 위치에서 함숫값이 가장 급격히 커지는 방향을 향합니다. 따라서 손실 함수를 줄이려면 정반대 방향인 -∇L(w)로 이동해야 합니다."
+  },
+  {
+    "id": "P2-C-03",
+    "no": 18,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 05",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "경사하강법에서 학습률(Learning Rate, η) 설정이 학습 수렴에 미치는 영향으로 옳지 않은 것은?",
+    "description": "",
+    "options": [
+      "학습률이 지나치게 크면 최솟값 골짜기를 넘어 진동(Overshooting)하거나 손실이 무한대로 발산(Divergence)할 수 있다.",
+      "학습률이 지나치게 작으면 수렴 속도가 극도로 느려지고 얕은 지역 최솟값(Local Minimum)에 갇히기 쉽다.",
+      "학습률을 0으로 설정하면 단 1회의 스텝만에 전역 최솟값(Global Minimum)에 도달한다.",
+      "현대 LLM 학습에서는 초기에 학습률을 서서히 높이는 Warmup과 이후 서서히 줄이는 Decay 스케줄러를 함께 사용한다."
+    ],
+    "answer": 3,
+    "explanation": "학습률 η = 0 이면 w_(t+1) = w_t - 0 = w_t 가 되어 가중치가 전혀 업데이트되지 않고 초기 상태에 그대로 멈춰 있게 됩니다."
+  },
+  {
+    "id": "P2-C-04",
+    "no": 19,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 05",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "딥러닝 은닉층에서 가장 널리 쓰이는 활성화 함수 ReLU(x) = max(0, x)의 도함수(미분값) 특성으로 올바른 것은?",
+    "description": "",
+    "options": [
+      "모든 실수 구간에서 미분값이 항상 0.25로 일정하다.",
+      "x > 0 구간에서는 미분값이 1로 유지되어 기울기 소실을 방지하지만, x < 0 구간에서는 미분값이 0이 되어 뉴런이 죽는(Dying ReLU) 현상이 발생할 수 있다.",
+      "x > 0 구간에서 미분값이 0이고, x < 0 구간에서 미분값이 1이다.",
+      "출력이 항상 [-1, 1] 사이로 압축되는 S자형 곡선 함수이다."
+    ],
+    "answer": 2,
+    "explanation": "ReLU는 양수 영역(x > 0)에서 기울기가 1이므로 깊은 신경망에서도 그래디언트가 감쇠 없이 전달되지만, 음수 영역(x < 0)에서는 기울기가 0이 되어 가중치 갱신이 멈추는 Dying ReLU 문제가 나타날 수 있습니다."
+  },
+  {
+    "id": "P2-C-05",
+    "no": 20,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 06",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "오차 역전파(Backpropagation)의 수학적 근간이 되는 합성함수의 연쇄 법칙(Chain Rule)에서, z = f(y) 이고 y = g(x) 일 때 x에 대한 z의 미분 dz/dx 를 바르게 나타낸 것은?",
+    "description": "",
+    "options": [
+      "dz/dx = (dz/dy) + (dy/dx)",
+      "dz/dx = (dz/dy) · (dy/dx)",
+      "dz/dx = (dz/dy) - (dy/dx)",
+      "dz/dx = (dy/dz) / (dy/dx)"
+    ],
+    "answer": 2,
+    "explanation": "라이프니츠 연쇄 법칙에 의해 합성함수의 도함수는 바깥 함수의 미분(상류 그래디언트 dz/dy)과 안쪽 함수의 국소 미분(dy/dx)의 곱으로 계산됩니다."
+  },
+  {
+    "id": "P2-C-06",
+    "no": 21,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 06",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "계산 그래프(Computation Graph)의 곱셈 노드 z = x * y 에서 x = 3, y = -4 이고, 출력단에서 역전파되어 내려온 상류 그래디언트가 ∂L/∂z = 2 일 때, 입력단으로 전달되는 그래디언트 (∂L/∂x, ∂L/∂y)의 값은?",
+    "description": "곱셈 게이트의 국소 미분: ∂z/∂x = y, ∂z/∂y = x",
+    "options": [
+      "∂L/∂x = 6, ∂L/∂y = -8",
+      "∂L/∂x = -8, ∂L/∂y = 6",
+      "∂L/∂x = 2, ∂L/∂y = 2",
+      "∂L/∂x = -12, ∂L/∂y = -12"
+    ],
+    "answer": 2,
+    "explanation": "곱셈 게이트는 입력값을 서로 바꾸어 곱하는 스위칭(Mover) 역할을 합니다. 따라서 ∂L/∂x = (∂L/∂z)·y = 2 × (-4) = -8 이고, ∂L/∂y = (∂L/∂z)·x = 2 × 3 = 6 입니다."
+  },
+  {
+    "id": "P2-C-07",
+    "no": 22,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 06",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "은닉층이 매우 깊은 신경망이나 긴 시계열의 RNN에서 시그모이드(Sigmoid, σ(x)) 활성화 함수를 반복 사용할 때 기울기 소실(Vanishing Gradient)이 발생하는 결정적 원인은?",
+    "description": "시그모이드 도함수: σ'(x) = σ(x)(1 - σ(x))",
+    "options": [
+      "시그모이드 도함수 σ'(x)의 최댓값이 x=0에서 0.25(1/4)에 불과하여, 층을 거슬러 곱해질수록 (0.25)^L 형태로 그래디언트가 0에 수렴하기 때문이다.",
+      "시그모이드 함수의 출력값이 항상 무한대로 발산하기 때문이다.",
+      "시그모이드 함수는 덧셈 연산만 수행하여 역전파가 불가능하기 때문이다.",
+      "시그모이드 미분값이 항상 1보다 커서 기울기가 폭발하기 때문이다."
+    ],
+    "answer": 1,
+    "explanation": "σ(0)=0.5일 때 도함수 최댓값은 0.5×(1-0.5)=0.25입니다. 역전파 시 연쇄 법칙에 의해 0.25 이하의 값들이 계속 곱해지면 앞단 레이어에 도달하는 기울기는 0에 가까워져 학습이 멈춥니다."
+  },
+  {
+    "id": "P2-C-08",
+    "no": 23,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 06",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "순환신경망(RNN)의 시간에 따른 역전파(BPTT) 과정에서 기울기 소실 문제를 극복하기 위해 LSTM(Long Short-Term Memory)과 ResNet(잔차 신경망)이 공통적으로 도입한 핵심 수학적 구조는?",
+    "description": "",
+    "options": [
+      "모든 가중치를 매 스텝마다 0으로 초기화하는 리셋 구조",
+      "덧셈(+) 기반의 선형 경로(Cell State 컨베이어 벨트 / Skip Connection)를 만들어 미분 시 기울기 1이 감쇠 없이 직접 흐르도록 하는 그래디언트 고속도로 구조",
+      "오차 역전파를 생략하고 무작위 탐색으로만 학습하는 구조",
+      "활성화 함수를 모두 계단 함수(Step Function)로 대체하는 구조"
+    ],
+    "answer": 2,
+    "explanation": "계산 그래프에서 덧셈(+) 노드는 상류 그래디언트를 그대로(×1) 분배합니다. LSTM의 Cell State 업데이트와 ResNet의 Residual Skip Connection(F(x)+x)은 모두 덧셈 경로를 통해 기울기가 소실 없이 전달되도록 설계되었습니다."
+  },
+  {
+    "id": "P2-C-09",
+    "no": 24,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 07",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "이진 분류(Binary Classification) 모델에서 실제 정답 레이블이 y = 1 인 샘플에 대해 모델이 예측 확률을 y_hat = 0.0001 로 잘못 예측했을 때, 이진 교차 엔트로피 손실(BCE Loss = -y log(y_hat) - (1-y) log(1-y_hat))의 동작 특성으로 올바른 것은?",
+    "description": "",
+    "options": [
+      "손실(Loss) 값이 0이 되어 가중치 업데이트가 일어나지 않는다.",
+      "-log(0.0001) 값이 매우 크게 치솟아 잘못된 확신에 대해 강력한 오차 페널티와 큰 기울기를 부여한다.",
+      "예측 확률에 상관없이 항상 일정한 상수 손실(1.0)을 반환한다.",
+      "손실 값이 음수(-)가 되어 학습 방향이 반대로 뒤집힌다."
+    ],
+    "answer": 2,
+    "explanation": "교차 엔트로피 손실은 정답 클래스의 예측 확률이 0에 가까워질수록 -log(y_hat)이 무한대로 급증하므로, 틀린 답을 확신한 모델에 강력한 페널티를 부과하여 빠르게 수정하도록 유도합니다."
+  },
+  {
+    "id": "P2-C-10",
+    "no": 25,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 07",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "과적합(Overfitting)을 막기 위한 가중치 규제(Regularization) 중 L1 규제(Lasso)와 L2 규제(Ridge / Weight Decay)의 미분 및 해의 특성을 비교한 설명으로 가장 정확한 것은?",
+    "description": "",
+    "options": [
+      "L1 규제는 미분 시 가중치의 부호(sign(w))만큼 일정한 힘으로 0을 향해 밀어붙여 불필요한 특성의 가중치를 정확히 0으로 만드는 특성 선택(Feature Selection) 효과가 있다.",
+      "L2 규제는 가중치를 정확히 0으로 만들어 희소 행렬(Sparse Matrix)을 생성하는 데 L1보다 유리하다.",
+      "L1 규제는 가중치 크기에 비례하여 감소 속도가 줄어들어 절대 0에 도달하지 않는다.",
+      "L1과 L2 규제는 훈련 데이터의 오차를 0으로 만들기 위해 모델 복잡도를 높이는 기법이다."
+    ],
+    "answer": 1,
+    "explanation": "L1 규제 항 λ|w|의 도함수는 λ·sign(w)로, 가중치가 작아져도 일정한 상수 크기로 0까지 밀어붙여 희소 해(w=0)를 만듭니다. 반면 L2 규제 항 (λ/2)w^2의 도함수는 λw로, 0에 가까워질수록 감쇠 폭이 줄어듭니다."
+  },
+  {
+    "id": "P2-C-11",
+    "no": 26,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 07",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "회귀(Regression) 문제에서 평균제곱오차(MSE) 대신 평균절대오차(MAE) 또는 후버 손실(Huber Loss)을 선택해야 하는 가장 대표적인 데이터 상황은?",
+    "description": "",
+    "options": [
+      "모든 데이터가 정규분포를 따르고 이상치가 전혀 없는 경우",
+      "타깃 변수에 극단적인 이상치(Outlier)가 다수 포함되어 있어, 오차 제곱((y - y_hat)^2)으로 인해 모델 전체가 이상치에 끌려가는 현상을 방지해야 하는 경우",
+      "분류해야 할 클래스의 개수가 1,000개 이상인 다중 분류 문제인 경우",
+      "데이터의 모든 특성 값이 0 또는 1의 이진수로만 이루어진 경우"
+    ],
+    "answer": 2,
+    "explanation": "MSE는 오차를 제곱하므로 오차가 10이면 손실이 100이 되어 이상치 하나가 전체 회귀선을 왜곡시킵니다. MAE와 Huber Loss는 큰 오차 구간에서 선형(1차) 페널티를 부과하여 이상치에 강건(Robust)합니다."
+  },
+  {
+    "id": "P2-C-12",
+    "no": 27,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 08",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "최적화 알고리즘인 Adam(Adaptive Moment Estimation)이 결합한 두 가지 핵심 수학적 메커니즘은?",
+    "description": "",
+    "options": [
+      "1차 모멘트(그래디언트의 지수이동평균: Momentum 관성) + 2차 모멘트(그래디언트 제곱의 지수이동평균: RMSProp 적응형 학습률)",
+      "결정 트리 분할 + 최근접 이웃(KNN) 거리 계산",
+      "주성분 분석(PCA) + 특잇값 분해(SVD)",
+      "드롭아웃(Dropout) + 배치 정규화(Batch Normalization)"
+    ],
+    "answer": 1,
+    "explanation": "Adam은 이전 기울기의 방향 관성을 유지하는 1차 모멘텀(m_t)과 파라미터별 기울기 크기에 따라 보폭을 자동 조절하는 RMSProp의 2차 모멘텀(v_t)을 결합하고 초기 편향 보정(Bias Correction)을 추가한 알고리즘입니다."
+  },
+  {
+    "id": "P2-C-13",
+    "no": 28,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 08",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "현대 트랜스포머 및 LLM 학습에서 기본 표준으로 사용되는 AdamW 옵티마이저가 기존 Adam을 개선한 핵심 원리는?",
+    "description": "",
+    "options": [
+      "가중치 감쇠(Weight Decay) 항을 그래디언트 계산(L2 손실 미분)에서 분리(Decoupled)하여 적응형 학습률 스케일링에 왜곡되지 않고 가중치에 직접 감쇠를 적용한다.",
+      "2차 모멘트 계산을 완전히 삭제하여 일반 SGD와 동일하게 동작하게 만든다.",
+      "학습률을 매 스텝마다 무작위 난수로 설정한다.",
+      "역전파 없이 순전파만으로 가중치를 갱신한다."
+    ],
+    "answer": 1,
+    "explanation": "기존 Adam에 L2 규제를 넣으면 가중치 감쇠 항까지 그래디언트 제곱(sqrt(v_t))으로 나뉘어 규제 효과가 왜곡됩니다. AdamW는 Weight Decay를 옵티마이저 업데이트 마지막 단계에 분리 적용하여 일반화 성능을 크게 높였습니다."
+  },
+  {
+    "id": "P2-C-14",
+    "no": 29,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 08",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "XGBoost 알고리즘이 목적 함수 L^(t) 를 최적화할 때 2차 테일러 급수 전개(Second-Order Taylor Expansion)를 사용함으로써 얻는 수학적 장점은?",
+    "description": "L^(t) ≈ Σ [ L(y_i, y_hat^(t-1)) + g_i f_t(x_i) + (1/2) h_i f_t^2(x_i) ] + Ω(f_t)",
+    "options": [
+      "1차 도함수(Gradient, g_i)인 기울기 방향뿐만 아니라 2차 도함수(Hessian, h_i)인 곡률 정보까지 함께 활용하여 최적의 리프 노드 가중치와 분할 이득(Gain)을 훨씬 빠르고 정밀하게 구할 수 있다.",
+      "손실 함수가 미분 불가능한 계단 함수여도 항상 미분값을 1로 고정할 수 있다.",
+      "트리의 깊이(Max Depth)를 무한대로 늘려도 과적합이 절대 발생하지 않는다.",
+      "데이터의 결측치를 별도 처리 없이 모두 0으로 삭제할 수 있다."
+    ],
+    "answer": 1,
+    "explanation": "일반 GBDT는 1차 미분(Gradient)만 사용하지만, XGBoost는 뉴턴-랩슨법과 유사하게 1차 미분(g_i)과 2차 미분(h_i, 곡률)을 모두 사용하여 손실 곡면의 형태를 정밀하게 근사하고 최적 분할점을 해석적으로 도출합니다."
+  },
+  {
+    "id": "P2-C-15",
+    "no": 30,
+    "category": "미적분 & 최적화: 딥러닝과 머신러닝의 학습 엔진",
+    "chapter": "Day 08",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM 사전학습 및 파인튜닝 시 학습 초기에 작은 학습률에서 시작해 선형적으로 목표 학습률까지 올린 뒤, 코사인 곡선을 따라 서서히 줄여나가는 스케줄링 기법의 명칭과 초기 구간(Warmup)의 목적은?",
+    "description": "",
+    "options": [
+      "Linear Warmup & Cosine Annealing — 학습 초기 무작위 초기화된 가중치에서 거대한 그래디언트가 발생해 어텐션 분포와 Adam 통계량이 불안정하게 발산하는 것을 방지한다.",
+      "Step Decay — 학습 시간을 10배로 늘리기 위해 사용한다.",
+      "Exponential Explosion — 기울기 폭주를 고의로 유발하기 위해 사용한다.",
+      "Dropout Scheduling — 뉴런의 90%를 영구 삭제하기 위해 사용한다."
+    ],
+    "answer": 1,
+    "explanation": "학습 초기에는 파라미터가 무작위 상태이고 Adam의 2차 모멘트 표본이 부족해 분산이 매우 큽니다. 따라서 Warmup 구간을 두어 초기 진동을 억제한 뒤 Cosine Decay로 정밀 수렴시킵니다."
+  },
+  {
+    "id": "P3-C-01",
+    "no": 31,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 09",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "베이즈 정리(Bayes' Theorem) 수식 P(H | E) = [P(E | H) · P(H)] / P(E) 에서 각 항의 명칭을 순서대로 바르게 짝지은 것은?",
+    "description": "H: 가설(Hypothesis), E: 관측된 데이터/증거(Evidence)",
+    "options": [
+      "P(H|E): 사전확률(Prior), P(E|H): 사후확률(Posterior), P(H): 우도(Likelihood)",
+      "P(H|E): 사후확률(Posterior), P(E|H): 우도(Likelihood), P(H): 사전확률(Prior)",
+      "P(H|E): 우도(Likelihood), P(E|H): 주변확률(Marginal), P(H): 사후확률(Posterior)",
+      "P(H|E): 결합확률(Joint), P(E|H): 사전확률(Prior), P(H): 조건부확률"
+    ],
+    "answer": 2,
+    "explanation": "베이즈 추론은 기존의 믿음인 사전확률 P(H)에 새로운 데이터 증거가 나타날 가능성인 우도 P(E|H)를 곱하고 정규화 상수 P(E)로 나누어, 증거 관측 후 갱신된 사후확률 P(H|E)를 도출하는 과정입니다."
+  },
+  {
+    "id": "P3-C-02",
+    "no": 32,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 09",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "전체 이메일 중 스팸 메일의 비율(사전확률)이 P(Spam) = 0.2 이고 정상 메일 비율이 P(Ham) = 0.8 이다. '무료쿠폰'이라는 단어가 스팸 메일에 등장할 확률 P(Word|Spam) = 0.5 이고, 정상 메일에 등장할 확률 P(Word|Ham) = 0.05 일 때, '무료쿠폰'이 포함된 메일이 실제 스팸일 사후확률 P(Spam|Word)는?",
+    "description": "전확률 공식: P(Word) = P(Word|Spam)P(Spam) + P(Word|Ham)P(Ham)",
+    "options": [
+      "50.0% (0.50)",
+      "71.4% (5/7)",
+      "20.0% (0.20)",
+      "90.0% (0.90)"
+    ],
+    "answer": 2,
+    "explanation": "분자 P(Word|Spam)P(Spam) = 0.5 × 0.2 = 0.10 이고, 정상 메일에서 나올 확률 곱은 0.05 × 0.8 = 0.04 입니다. 따라서 P(Spam|Word) = 0.10 / (0.10 + 0.04) = 0.10 / 0.14 = 5/7 ≈ 71.4%입니다."
+  },
+  {
+    "id": "P3-C-03",
+    "no": 33,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 09",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "나이브 베이즈 분류기(Naive Bayes Classifier)가 고차원 텍스트 분류에서 계산 복잡도를 획기적으로 낮추기 위해 도입한 핵심 가정(Assumption)은?",
+    "description": "",
+    "options": [
+      "클래스 레이블(정답)이 주어졌을 때 모든 입력 특성(단어)들이 서로 조건부 독립(Conditionally Independent)이라고 가정한다.",
+      "모든 단어의 등장 확률이 무조건 동일(균등 분포)하다고 가정한다.",
+      "문장 내 단어의 개수가 항상 3개 이하라고 가정한다.",
+      "사전확률 P(Y)가 항상 0이라고 가정한다."
+    ],
+    "answer": 1,
+    "explanation": "조건부 독립 가정 P(x1, x2, ..., xn | Y) = Π P(x_i | Y) 덕분에 지수적으로 증가하는 결합 확률 테이블 대신 개별 단어의 조건부 확률 곱만으로 빠른 추론이 가능합니다."
+  },
+  {
+    "id": "P3-C-04",
+    "no": 34,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 10",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "신경망의 출력 로짓(Logit) 벡터 z = [z_1, z_2, ..., z_K] 를 소프트맥스(Softmax) 함수로 변환할 때, 컴퓨터 구현 시 분자와 분모의 지수함수에서 최댓값 m = max(z) 를 빼주는 p_i = exp(z_i - m) / Σ exp(z_j - m) 기법(Log-Sum-Exp Trick)을 사용하는 이유는?",
+    "description": "",
+    "options": [
+      "확률 분포의 결과값을 완전히 다른 값으로 변경하기 위해서이다.",
+      "로짓 z_i 값이 클 때 exp(z_i)가 부동소수점 표현 한계를 넘어 무한대(Inf)로 터지는 수치적 오버플로우(Numerical Overflow)를 수학적 동치 상태에서 완벽히 방지하기 위해서이다.",
+      "음수 로짓을 삭제하여 클래스 개수를 줄이기 위해서이다.",
+      "미분값을 항상 0으로 고정하기 위해서이다."
+    ],
+    "answer": 2,
+    "explanation": "exp(z_i - m) = exp(z_i)/exp(m) 이므로 분자와 분모에서 exp(-m)이 약분되어 수학적 확률값은 100% 동일하게 유지되면서도, 지수함수의 최대 입력이 0 이하(exp(0)=1)로 제한되어 오버플로우가 원천 차단됩니다."
+  },
+  {
+    "id": "P3-C-05",
+    "no": 35,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 10",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM 토큰 생성 시 온도 파라미터(Temperature, T)가 적용된 소프트맥스 P_i = exp(z_i / T) / Σ exp(z_j / T) 에서 Temperature T의 조절 효과로 올바른 것은?",
+    "description": "",
+    "options": [
+      "T → 0 에 가까워질수록 확률 분포가 가장 큰 로짓 하나에 쏠리는 뾰족한(Sharp/Argmax) 분포가 되어 일관되고 결정론적인(Deterministic) 답변을 생성한다.",
+      "T → 0 에 가까워질수록 모든 단어의 확률이 똑같아지는 균등 분포(Uniform Distribution)가 된다.",
+      "T를 높게(예: T = 2.0) 설정할수록 항상 1등 토큰만 반복 출력한다.",
+      "Temperature T는 모델의 GPU 하드웨어 냉각 팬 속도만을 제어한다."
+    ],
+    "answer": 1,
+    "explanation": "T가 0에 가까워지면 로짓 간의 차이가 증폭되어 최고 점수 토큰의 확률이 1에 수렴(Greedy Decoding에 근접)하고, T가 커지면 로짓 차이가 평탄화되어 창의적이고 다양한 토큰이 샘플링됩니다."
+  },
+  {
+    "id": "P3-C-06",
+    "no": 36,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 10",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM 디코딩 전략 중 고정된 개수의 토큰을 자르는 Top-k 샘플링의 한계를 보완하여, 확률이 높은 순서대로 토큰들의 누적 확률 합이 임계값 p(예: 0.9)에 도달할 때까지만 후보군에 동적으로 포함시키는 기법은?",
+    "description": "",
+    "options": [
+      "빔 서치 (Beam Search)",
+      "그리디 디코딩 (Greedy Decoding)",
+      "Top-p 샘플링 (Nucleus Sampling)",
+      "배치 정규화 (Batch Normalization)"
+    ],
+    "answer": 3,
+    "explanation": "Top-p(Nucleus) 샘플링은 모델이 확신할 때(분포가 뾰족할 때)는 소수의 토큰만 선택하고, 불확실할 때(분포가 평평할 때)는 더 많은 후보 토큰을 열어두어 문맥에 맞게 후보군 크기를 동적으로 조절합니다."
+  },
+  {
+    "id": "P3-C-07",
+    "no": 37,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 10",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "딥러닝 신경망에서 ReLU 활성화 함수를 사용하는 은닉층(입력 노드 수 n_in)의 순전파/역전파 신호 분산이 층을 지나도 일정하게 유지되도록 가중치를 N(0, 2 / n_in)으로 초기화하는 기법은?",
+    "description": "",
+    "options": [
+      "영점 초기화 (Zero Initialization)",
+      "세이비어 초기화 (Xavier / Glorot Initialization)",
+      "허 초기화 (He / Kaiming Initialization)",
+      "원-핫 초기화 (One-Hot Initialization)"
+    ],
+    "answer": 3,
+    "explanation": "ReLU는 음수 절반을 0으로 만들어 분산이 절반으로 줄어들기 때문에, 이를 보정하기 위해 분산에 2를 곱한 Var(W) = 2 / n_in 을 사용하는 He(Kaiming) 초기화가 표준으로 사용됩니다. (Xavier는 Tanh/Sigmoid용 1/n_in)"
+  },
+  {
+    "id": "P3-C-08",
+    "no": 38,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 11",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "이진 확률변수 X가 앞면이 나올 확률 p, 뒷면이 나올 확률 (1-p)인 동전 던지기일 때, 샤논 엔트로피(Shannon Entropy) H(X) = -p log2(p) - (1-p) log2(1-p) 가 최댓값(1 bit)을 갖는 조건은?",
+    "description": "",
+    "options": [
+      "p = 1.0 (항상 앞면만 나오는 동전)",
+      "p = 0.0 (항상 뒷면만 나오는 동전)",
+      "p = 0.5 (앞면과 뒷면이 반반의 확률로 나와 불확실성이 최대인 공정한 동전)",
+      "p = 0.9 (앞면이 90% 확률로 나오는 동전)"
+    ],
+    "answer": 3,
+    "explanation": "샤논 엔트로피는 확률분포의 평균 불확실성(정보량)을 나타냅니다. 모든 사건이 동일한 확률(p = 0.5)로 발생할 때 결과를 가장 예측하기 어려우므로 엔트로피가 최댓값 1 bit(-0.5 log2(0.5) - 0.5 log2(0.5) = 1)를 갖습니다."
+  },
+  {
+    "id": "P3-C-09",
+    "no": 39,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 11",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "의사결정 트리(CART 알고리즘)의 노드에 속한 샘플이 총 10개이고, 그중 양성(Class 1)이 5개, 음성(Class 0)이 5개일 때 이 노드의 지니 불순도(Gini Impurity = 1 - Σ p_i^2) 값은?",
+    "description": "",
+    "options": [
+      "0.0",
+      "0.25",
+      "0.50",
+      "1.0"
+    ],
+    "answer": 3,
+    "explanation": "p_1 = 5/10 = 0.5, p_0 = 5/10 = 0.5 이므로 Gini = 1 - (0.5^2 + 0.5^2) = 1 - (0.25 + 0.25) = 0.50 입니다. (한 클래스로만 100% 구성된 순수 노드의 지니 불순도는 0입니다.)"
+  },
+  {
+    "id": "P3-C-10",
+    "no": 40,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 11",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "두 확률분포 P(실제 분포)와 Q(모델 예측 분포) 사이의 차이를 측정하는 쿨백-라이블러 발산(KL Divergence, D_KL(P || Q))의 수학적 성질과 LLM RLHF 활용에 대한 설명으로 가장 올바른 것은?",
+    "description": "D_KL(P || Q) = H(P, Q) - H(P) = Σ P(x) log(P(x) / Q(x))",
+    "options": [
+      "D_KL(P || Q)는 항상 0 이상(Non-negative)이며, 교환법칙이 성립하지 않는 비대칭성(D_KL(P||Q) ≠ D_KL(Q||P))을 가진다. RLHF에서는 학습 중인 정책 모델이 초기 레퍼런스 모델에서 너무 멀어지지 않도록 제약 페널티로 사용된다.",
+      "D_KL(P || Q)는 두 분포가 다를수록 음수(-) 값을 가진다.",
+      "D_KL(P || Q) = D_KL(Q || P) 대칭성이 항상 성립하므로 유클리디안 거리와 완전히 같다.",
+      "실제 분포 P가 고정되어 있을 때 교차 엔트로피 H(P, Q)를 최소화하는 것과 KL 발산을 최소화하는 것은 서로 정반대의 결과를 낳는다."
+    ],
+    "answer": 1,
+    "explanation": "깁스 부등식에 의해 D_KL(P||Q) ≥ 0 이며 비대칭적입니다. 또한 H(P, Q) = H(P) + D_KL(P||Q) 에서 정답 분포 H(P)는 상수이므로, 분류 모델에서 교차 엔트로피를 최소화하는 것은 곧 D_KL(P||Q)를 최소화하는 것과 수학적으로 동치입니다."
+  },
+  {
+    "id": "P3-C-11",
+    "no": 41,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 11",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "실제 분포 P가 원-핫(One-Hot) 정답 레이블일 때, 모델의 예측 분포 Q와의 교차 엔트로피(Cross-Entropy) H(P, Q) = -Σ P(x) log Q(x) 를 최소화하는 학습은 정보이론적으로 무엇과 동치인가?",
+    "description": "",
+    "options": [
+      "실제 분포 P의 엔트로피 H(P)를 최대화하는 것",
+      "두 분포 사이의 쿨백-라이블러 발산 D_KL(P || Q)를 최소화하여 모델 분포 Q가 실제 분포 P에 수렴하게 만드는 것",
+      "모든 클래스의 예측 확률을 0으로 만드는 것",
+      "입력 데이터의 차원을 축소하는 것"
+    ],
+    "answer": 2,
+    "explanation": "교차 엔트로피 H(P, Q) = H(P) + D_KL(P || Q) 이며, 정답 레이블 분포 P의 엔트로피 H(P)는 가중치에 무관한 상수(원-핫일 때 0)이므로, H(P, Q) 최소화는 곧 D_KL(P || Q) 최소화와 정확히 일치합니다."
+  },
+  {
+    "id": "P3-C-12",
+    "no": 42,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 12",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "암 진단 이진 분류 모델의 혼동 행렬(Confusion Matrix) 결과가 TP(진양성)=80, FP(위양성)=20, FN(위음성)=20, TN(진음성)=880 일 때, 이 모델의 정밀도(Precision), 재현율(Recall), F1-Score를 바르게 계산한 것은?",
+    "description": "Precision = TP/(TP+FP), Recall = TP/(TP+FN), F1 = 2*(Precision*Recall)/(Precision+Recall)",
+    "options": [
+      "Precision = 0.80, Recall = 0.80, F1-Score = 0.80",
+      "Precision = 0.96, Recall = 0.96, F1-Score = 0.96",
+      "Precision = 0.50, Recall = 0.80, F1-Score = 0.62",
+      "Precision = 0.80, Recall = 0.50, F1-Score = 0.62"
+    ],
+    "answer": 1,
+    "explanation": "Precision = 80 / (80 + 20) = 0.80 이고, Recall = 80 / (80 + 20) = 0.80 입니다. 두 값의 조화평균인 F1-Score 역시 2×(0.8×0.8)/(0.8+0.8) = 0.80 입니다. (불균형 데이터에서 Accuracy는 960/1000=0.96으로 착시를 일으킵니다.)"
+  },
+  {
+    "id": "P3-C-13",
+    "no": 43,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 12",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "제조 공정 가스 누출 감지나 악성코드 탐지처럼 '실제 위험 상황(양성)을 정상(음성)으로 놓치는 오류(FN, 미탐)'가 치명적인 도메인에서 최우선으로 높여야 하는 평가 지표는?",
+    "description": "",
+    "options": [
+      "정확도 (Accuracy)",
+      "정밀도 (Precision)",
+      "재현율 (Recall / Sensitivity)",
+      "특이도 (Specificity)"
+    ],
+    "answer": 3,
+    "explanation": "재현율(Recall = TP / (TP + FN))은 실제 양성 중에서 모델이 놓치지 않고 찾아낸 비율입니다. 따라서 미탐(FN)을 최소화해야 하는 안전·보안·의료 스크리닝 분야에서는 Recall을 최우선 지표로 관리합니다."
+  },
+  {
+    "id": "P3-C-14",
+    "no": 44,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 12",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "분류 임계값(Threshold) 변화에 따른 모델의 전반적인 판별 성능을 평가하는 ROC 곡선(ROC Curve)의 가로축(X축)과 세로축(Y축)에 해당하는 지표는?",
+    "description": "",
+    "options": [
+      "가로축: 위양성률(FPR = FP / (FP + TN)), 세로축: 진양성률(TPR = Recall = TP / (TP + FN))",
+      "가로축: 학습 에포크(Epoch), 세로축: 손실(Loss)",
+      "가로축: 정밀도(Precision), 세로축: 정확도(Accuracy)",
+      "가로축: 편향(Bias), 세로축: 분산(Variance)"
+    ],
+    "answer": 1,
+    "explanation": "ROC 곡선은 임계값을 1에서 0까지 변화시킬 때 X축에 FPR(1 - Specificity, 오탐률), Y축에 TPR(Recall, 탐지율)을 그린 곡선이며, 곡선 아래 면적인 AUC가 1에 가까울수록 완벽한 분류기입니다."
+  },
+  {
+    "id": "P3-C-15",
+    "no": 45,
+    "category": "확률통계 & 정보이론: 불확실성과 데이터의 본질 정량화",
+    "chapter": "Day 12",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "지도학습 모델의 기대 일반화 오차 분해식 Error = Bias^2 + Variance + σ^2 (편향-분산 트레이드오프)에서, 훈련 데이터에서는 오차가 0에 가깝지만 검증(Test) 데이터에서 오차가 급증하는 과적합(Overfitting) 상태의 수학적 진단으로 옳은 것은?",
+    "description": "",
+    "options": [
+      "높은 편향(High Bias) · 낮은 분산(Low Variance) 상태이다.",
+      "낮은 편향(Low Bias) · 높은 분산(High Variance) 상태이다.",
+      "편향(Bias)과 분산(Variance)이 모두 0인 완벽한 상태이다.",
+      "모델 복잡도가 지나치게 단순하여 발생하는 과소적합(Underfitting) 상태이다."
+    ],
+    "answer": 2,
+    "explanation": "모델이 지나치게 복잡하면 훈련 데이터의 노이즈까지 암기하여 평균적인 예측 편향(Bias)은 낮아지지만, 데이터셋이 조금만 바뀌어도 예측값이 크게 흔들리는 높은 분산(High Variance, 과적합) 상태가 됩니다."
+  },
+  {
+    "id": "P4-C-01",
+    "no": 46,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 13",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "정점(Vertex)이 4개인 방향 그래프 G = (V, E)의 인접 행렬(Adjacency Matrix) A에 대하여, 거듭제곱 행렬 (A^2)의 (i, j) 성분 (A^2)_ij 가 의미하는 그래프 이론적 성질은?",
+    "description": "단, A_uv 는 정점 u에서 v로 가는 간선이 있으면 1, 없으면 0이다.",
+    "options": [
+      "정점 i에서 정점 j로 정확히 2개의 간선(2-hop 경로)을 거쳐 도달할 수 있는 경로의 총개수",
+      "정점 i와 정점 j 사이의 유클리디안 직선거리",
+      "그래프 전체의 신장 트리(Spanning Tree) 개수",
+      "정점 i의 진입 차수(In-degree)와 진출 차수(Out-degree)의 차"
+    ],
+    "answer": 1,
+    "explanation": "(A^2)_ij = Σ_k A_ik · A_kj 이며, A_ik와 A_kj가 모두 1일 때만 1이 더해지므로 정점 i → k → j 로 이어지는 길이 2인 경로(2-step Walk)의 총개수를 정확히 나타냅니다."
+  },
+  {
+    "id": "P4-C-02",
+    "no": 47,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 13",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "데이터 파이프라인(Airflow)이나 신경망 계산 그래프에서 작업들의 선후 의존성을 모순 없이 일렬로 나열하는 위상 정렬(Topological Sort)이 존재하기 위한 그래프의 필요충분조건은?",
+    "description": "",
+    "options": [
+      "그래프가 무방향 완전 그래프(Complete Graph)여야 한다.",
+      "그래프가 사이클(순환 루프)이 없는 방향성 비순환 그래프(DAG, Directed Acyclic Graph)여야 한다.",
+      "모든 정점의 진입 차수(In-degree)가 2 이상이어야 한다.",
+      "간선의 개수가 정점의 개수보다 무조건 많아야 한다."
+    ],
+    "answer": 2,
+    "explanation": "A → B → A 와 같은 순환(Cycle)이 존재하면 어느 작업을 먼저 실행해야 할지 결정할 수 없는 교착 상태(Deadlock)에 빠집니다. 따라서 위상 정렬은 오직 방향성 비순환 그래프(DAG)에서만 성립합니다."
+  },
+  {
+    "id": "P4-C-03",
+    "no": 48,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 13",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "칸 알고리즘(Kahn's Algorithm)을 이용해 DAG의 위상 정렬을 수행할 때 가장 먼저 큐(Queue)에 삽입하여 실행 순서를 배정하는 정점은?",
+    "description": "",
+    "options": [
+      "진출 차수(Out-degree)가 0인 정점",
+      "진입 차수(In-degree, 선행 의존 작업 수)가 0인 정점",
+      "간선 가중치의 합이 가장 큰 정점",
+      "번호가 가장 마지막인 정점"
+    ],
+    "answer": 2,
+    "explanation": "칸 알고리즘은 선행 조건이 전혀 없는 정점, 즉 진입 차수(In-degree)가 0인 정점부터 큐에 넣어 실행하고, 해당 정점에서 나가는 간선을 제거하며 새롭게 진입 차수가 0이 된 정점을 순차적으로 탐색합니다."
+  },
+  {
+    "id": "P4-C-04",
+    "no": 49,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 13",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "전통적인 단방향 DAG 파이프라인(예: 초기 LangChain LCEL 체인)이 자율 AI 에이전트(Autonomous Agent)를 구현할 때 겪는 근본적인 구조적 한계는?",
+    "description": "",
+    "options": [
+      "도구 실행 결과가 실패하거나 할루시네이션이 발생했을 때, 이전 단계(계획/재검색 노드)로 되돌아가 스스로 수정하는 순환 루프(Cycle / Feedback Loop)를 표현할 수 없다.",
+      "두 개 이상의 노드를 순서대로 연결할 수 없다.",
+      "파이썬 함수를 노드로 등록할 수 없다.",
+      "프롬프트 템플릿을 사용할 수 없다."
+    ],
+    "answer": 1,
+    "explanation": "DAG는 정의상 순환(Cycle)을 금지하므로, '코드 생성 → 실행 테스트 → 에러 발생 시 다시 코드 수정 노드로 복귀'하는 자율 에이전트의 반복적 자가 교정(Self-Correction) 루프를 그래프 수준에서 제어할 수 없습니다."
+  },
+  {
+    "id": "P4-C-05",
+    "no": 50,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 14",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LangGraph의 상태 그래프(StateGraph)에서 각 노드 함수가 반환한 메시지 리스트를 기존 상태(State)를 덮어쓰지 않고 누적(Append)하도록 지정하는 Python 타입 어노테이션 선언 방식은?",
+    "description": "import operator; from typing import Annotated, TypedDict",
+    "options": [
+      "messages: list[str] = None",
+      "messages: Annotated[list, operator.add]",
+      "messages: dict[int, float]",
+      "messages: tuple[bool]"
+    ],
+    "answer": 2,
+    "explanation": "LangGraph에서 상태 채널에 리듀서(Reducer) 함수를 지정하지 않으면 새 반환값이 기존 값을 덮어씁니다(Overwrite). Annotated[list, operator.add] (또는 add_messages)를 선언하면 기존 리스트에 새 메시지가 안전하게 병합됩니다."
+  },
+  {
+    "id": "P4-C-06",
+    "no": 51,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 14",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LangGraph에서 LLM 노드의 응답 결과에 따라 도구 호출(Tool Node)로 이동할지, 아니면 최종 답변을 마치고 종료(END)할지를 런타임에 동적으로 분기시키는 그래프 구성 요소는?",
+    "description": "",
+    "options": [
+      "정적 엣지 (workflow.add_edge)",
+      "조건부 엣지 (workflow.add_conditional_edges)와 라우팅 함수(Router Function)",
+      "위상 정렬 초기화 (workflow.clear_nodes)",
+      "원-핫 인코더 (OneHotEncoder)"
+    ],
+    "answer": 2,
+    "explanation": "add_conditional_edges(source_node, routing_fn, path_map)는 현재 State를 입력받아 다음 목적지 노드의 키를 반환하는 라우팅 함수를 통해 조건부 분기 및 순환 루프를 구현합니다."
+  },
+  {
+    "id": "P4-C-07",
+    "no": 52,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 14",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "순환 루프(Cycle)를 허용하는 LangGraph 에이전트가 도구 호출 실패나 모호한 질문으로 인해 무한 루프(튜링 정지 문제)에 빠져 API 비용이 폭주하는 것을 방지하는 2중 안전장치는?",
+    "description": "",
+    "options": [
+      "State 내부에 반복 횟수 카운터(iteration_count)를 두어 조건부 엣지에서 탈출시키거나, 그래프 실행 시 config={'recursion_limit': N} 최대 재귀 한도를 설정한다.",
+      "Temperature를 100으로 높여 무작위 문자열을 출력하게 만든다.",
+      "모든 간선을 삭제하여 노드가 실행되지 않게 막는다.",
+      "학습 데이터를 절반으로 삭제한다."
+    ],
+    "answer": 1,
+    "explanation": "순환 상태 그래프에서는 (1) 라우팅 함수에서 retry_count ≥ max_retries 일 때 강제로 END나 Fallback 노드로 분기하는 로직과, (2) 런타임 엔진 레벨의 recursion_limit 설정을 통해 무한 루프를 완벽히 방어합니다."
+  },
+  {
+    "id": "P4-C-08",
+    "no": 53,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 14",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LangGraph에서 그래프 실행 중 각 슈퍼스텝(Super-step)마다 상태 스냅샷을 저장하여 대화 기억 유지(Memory), 실행 중단 후 인간 승인 대기(Human-in-the-Loop), 과거 시점 되감기(Time Travel)를 가능하게 하는 핵심 컴포넌트는?",
+    "description": "",
+    "options": [
+      "체크포인터 (Checkpointer, 예: MemorySaver / PostgresSaver)",
+      "토크나이저 (Tokenizer)",
+      "드롭아웃 레이어 (Dropout Layer)",
+      "스탠다드 스케일러 (StandardScaler)"
+    ],
+    "answer": 1,
+    "explanation": "compile(checkpointer=...)로 체크포인터를 연결하면 thread_id 단위로 매 노드 실행 후의 State가 영속화되어 멀티턴 대화 유지, interrupt_before를 통한 인간 개입 승인, 상태 롤백이 가능해집니다."
+  },
+  {
+    "id": "P4-C-09",
+    "no": 54,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 15",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "의사결정 트리(Decision Tree)에서 부모 노드를 자식 노드들로 분할할 때, 분할 전후의 엔트로피(또는 지니 불순도) 감소량을 측정하여 가장 분류 효과가 뛰어난 특성을 선택하는 기준 지표는?",
+    "description": "IG(D, A) = H(D) - Σ (|D_v| / |D|) H(D_v)",
+    "options": [
+      "정보 이득 (Information Gain)",
+      "코사인 유사도 (Cosine Similarity)",
+      "학습률 (Learning Rate)",
+      "맨해튼 거리 (Manhattan Distance)"
+    ],
+    "answer": 1,
+    "explanation": "정보 이득(Information Gain)은 부모 노드의 엔트로피 H(D)에서 분할된 자식 노드들의 가중 평균 엔트로피를 뺀 값으로, 이 값이 클수록 분할 후 데이터의 불순도가 많이 줄어들었음을 의미합니다."
+  },
+  {
+    "id": "P4-C-10",
+    "no": 55,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 15",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "그래디언트 부스팅 계열 모델 중 XGBoost의 기본 트리 성장 방식인 Depth-wise(수평/깊이 중심 분할)와 LightGBM의 Leaf-wise(수직/리프 중심 분할)를 비교한 설명으로 가장 올바른 것은?",
+    "description": "",
+    "options": [
+      "Leaf-wise 방식은 트리의 균형을 맞추지 않고 현재 리프 노드 중 손실 감소량(Delta Loss)이 가장 큰 리프 하나를 선택해 집중 분할하므로 오차를 빠르게 줄이지만, 소규모 데이터에서는 깊은 비대칭 트리가 되어 과적합 위험이 높다.",
+      "Depth-wise 방식은 한쪽 가지만 무한히 깊게 파고드는 비대칭 트리 방식이다.",
+      "Leaf-wise 방식은 언제나 완전 이진 트리(Full Binary Tree) 형태만을 유지한다.",
+      "LightGBM은 트리를 전혀 사용하지 않는 선형 회귀 모델이다."
+    ],
+    "answer": 1,
+    "explanation": "LightGBM의 Leaf-wise(Best-first) 분할은 같은 리프 개수 대비 Depth-wise보다 낮은 손실을 달성하고 속도가 빠르지만, 데이터가 적을 때 과적합되기 쉬워 num_leaves와 max_depth 하이퍼파라미터 제어가 필수적입니다."
+  },
+  {
+    "id": "P4-C-11",
+    "no": 56,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 15",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "앙상블(Ensemble) 학습에서 배깅(Bagging: 예 - Random Forest)과 부스팅(Boosting: 예 - XGBoost, LightGBM)의 편향-분산 감소 목적 및 학습 구조 차이를 가장 정확히 설명한 것은?",
+    "description": "",
+    "options": [
+      "배깅은 부트스트랩 샘플링된 데이터로 여러 독립 트리를 병렬 학습시켜 예측의 분산(Variance)을 줄이고, 부스팅은 이전 트리의 잔차(오차)를 보완하는 약한 학습기를 순차적으로 직렬 결합하여 편향(Bias)을 줄인다.",
+      "배깅은 트리를 순차적으로 직렬 학습하고, 부스팅은 트리를 서로 독립적으로 병렬 학습한다.",
+      "배깅은 단일 트리 1개만 사용하며, 부스팅은 신경망만 사용한다.",
+      "배깅과 부스팅 모두 모델의 분산(Variance)을 무한대로 키우기 위해 사용한다."
+    ],
+    "answer": 1,
+    "explanation": "배깅(Bootstrap Aggregating)은 독립적인 모델들의 평균/다수결을 통해 Var(평균) = σ^2 / N 원리로 분산을 낮추며 병렬화가 가능합니다. 반면 부스팅은 이전 모델이 틀린 오차(Residual/Gradient)에 가중치를 두어 순차 학습하므로 편향(Bias)을 강력하게 낮춥니다."
+  },
+  {
+    "id": "P4-C-12",
+    "no": 57,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 15",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "랜덤 포레스트(Random Forest)가 일반 배깅(Bagging) 의사결정 트리보다 트리 간의 상관관계(Correlation)를 더욱 낮춰 일반화 성능을 높이기 위해 추가한 기법은?",
+    "description": "",
+    "options": [
+      "각 노드를 분할할 때마다 전체 특성(Feature)을 모두 쓰지 않고 무작위로 부분집합(예: sqrt(p)개)만 추출하여 최적 분할점을 탐색하는 특성 무작위 선택(Feature Subsampling)",
+      "모든 트리가 똑같은 루트 노드 특성을 강제로 공유하게 만드는 기법",
+      "훈련 데이터의 정답 레이블을 무작위로 섞어버리는 기법",
+      "트리의 깊이를 무조건 1(Stump)로 제한하는 기법"
+    ],
+    "answer": 1,
+    "explanation": "데이터만 부트스트랩하면 지배적인 강건한 특성 하나가 모든 트리의 최상단에 선택되어 트리들이 서로 비슷해집니다. 랜덤 포레스트는 노드 분할 시 후보 특성까지 무작위로 제한하여 트리 간 탈상관(De-correlation)을 달성합니다."
+  },
+  {
+    "id": "P4-C-13",
+    "no": 58,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 16",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "이산수학 및 오토마타 이론에서 유한 상태 기계(FSM, Finite State Machine)를 수학적으로 엄밀하게 정의하는 5-튜플(5-Tuple) M = (Q, Σ, δ, q_0, F) 의 구성 요소 설명으로 옳지 않은 것은?",
+    "description": "",
+    "options": [
+      "Q: 시스템이 가질 수 있는 유한한 상태(States)들의 집합",
+      "Σ(시그마): 외부에서 들어오는 입력 기호/이벤트(Input Alphabet)들의 유한 집합",
+      "δ(델타): 현재 상태와 입력을 받아 다음 상태를 결정하는 상태 전이 함수 (δ: Q × Σ → Q)",
+      "F: 에이전트가 절대 도달해서는 안 되는 문법 오류(Syntax Error) 코드의 집합"
+    ],
+    "answer": 4,
+    "explanation": "5-튜플에서 q_0는 초기 상태(Initial State)이고, F(⊆ Q)는 작업이 성공적으로 완료되어 멈추는 최종/수락 상태(Final / Accepting States)의 집합입니다."
+  },
+  {
+    "id": "P4-C-14",
+    "no": 59,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 16",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM 기반 자율 에이전트 디자인 패턴인 ReAct(Reason + Act)를 유한 상태 오토마타로 모델링할 때, 목표 달성(Final Answer) 전까지 반복 순환하는 3단계 상태 전이 사이클은?",
+    "description": "",
+    "options": [
+      "Thought(추론/계획) → Action(도구 호출 실행) → Observation(도구 실행 결과 관측) → Thought(재추론)",
+      "Compile(컴파일) → Link(링크) → Format(디스크 포맷)",
+      "Flatten(평탄화) → MaxPool(풀링) → Dropout(드롭아웃)",
+      "Select(조회) → Drop(삭제) → Rollback(롤백)"
+    ],
+    "answer": 1,
+    "explanation": "ReAct 패러다임은 에이전트가 내부적으로 현 상황을 분석하는 추론(Thought), 외부 API/도구를 호출하는 행동(Action), 그리고 환경으로부터 반환된 결과를 읽는 관측(Observation)의 3단계 상태 전이를 순환하며 문제를 해결합니다."
+  },
+  {
+    "id": "P4-C-15",
+    "no": 60,
+    "category": "이산수학 & 상태 그래프: 자율 에이전트 아키텍처의 뼈대",
+    "chapter": "Day 16",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "ReAct 에이전트에 메타인지(Meta-cognition) 능력을 결합한 Reflexion 아키텍처에서, 행동 실행 결과가 실패(Fail)로 판정되었을 때 에이전트가 수행하는 핵심 상태 전이 메커니즘은?",
+    "description": "",
+    "options": [
+      "평가자(Evaluator)가 실패를 감지하면 자기반성(Self-Reflection) 노드로 전이하여 실패 원인을 언어적 피드백으로 에피소드 메모리에 기록한 뒤, 이전 계획 상태로 롤백(Rollback)하여 개선된 행동을 재시도한다.",
+      "실패 즉시 모델의 가중치 전체를 삭제하고 처음부터 사전학습을 다시 시작한다.",
+      "오류 메시지를 숨기고 사용자에게 성공했다고 거짓 보고(Hallucination)한 뒤 즉시 종료한다.",
+      "동일한 인자와 동일한 도구를 수정 없이 무한히 반복 호출한다."
+    ],
+    "answer": 1,
+    "explanation": "Reflexion 아키텍처는 Actor(행동) - Evaluator(평가) - Self-Reflection(성찰) 3요소로 구성되어, 실행 실패 시 언어적 강화학습 피드백(Verbal Reinforcement)을 단기/장기 메모리에 추가하고 이전 상태로 전이해 똑같은 실수를 반복하지 않도록 합니다."
+  },
+  {
+    "id": "P5-C-01",
+    "no": 61,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 17",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "순수 파이썬 리스트(list)의 for 루프 연산보다 NumPy의 ndarray 벡터화(Vectorization) 연산이 수십~수백 배 빠른 하드웨어 및 메모리 구조상의 핵심 이유는?",
+    "description": "",
+    "options": [
+      "NumPy 배열은 동일한 데이터 타입(dtype)의 원소들을 연속된 메모리 블록(Contiguous Memory)에 배치하여 포인터 역참조 오버헤드를 없애고, C/Fortran으로 컴파일된 루틴과 CPU의 SIMD(단일 명령 다중 데이터) 병렬 연산을 직접 활용하기 때문이다.",
+      "NumPy는 연산 결과를 계산하지 않고 무작위 근사치만 반환하기 때문이다.",
+      "파이썬 인터프리터의 GIL(Global Interpreter Lock)이 파이썬 리스트를 자동으로 멀티코어 GPU로 분산시키기 때문이다.",
+      "NumPy 배열은 모든 숫자를 문자열(str)로 변환하여 저장하기 때문이다."
+    ],
+    "answer": 1,
+    "explanation": "파이썬 리스트는 각 원소가 메모리 곳곳에 흩어진 PyObject 객체의 포인터 배열이라 매 루프마다 타입 체크와 역참조가 발생하지만, NumPy ndarray는 연속된 원시 메모리 버퍼에 대해 C 레벨 루프와 CPU 캐시/SIMD 레지스터를 극대화합니다."
+  },
+  {
+    "id": "P5-C-02",
+    "no": 62,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 17",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "NumPy 브로드캐스팅(Broadcasting) 규칙에 따를 때, 다음 중 두 배열 A와 B의 덧셈(A + B) 연산이 ValueError 없이 성공하는 형상(Shape) 조합과 그 결과 형상은?",
+    "description": "브로드캐스팅 규칙: 뒤쪽(오른쪽) 차원부터 비교하여 두 차원의 크기가 같거나 둘 중 하나가 1이어야 한다.",
+    "options": [
+      "A: (32, 10, 64), B: (10, 1)  ➔  결과 Shape: (32, 10, 64)",
+      "A: (32, 10, 64), B: (32, 10)  ➔  결과 Shape: (32, 10, 64)",
+      "A: (4, 3), B: (4,)  ➔  결과 Shape: (4, 3)",
+      "A: (5, 2), B: (3, 2)  ➔  결과 Shape: (5, 3, 2)"
+    ],
+    "answer": 1,
+    "explanation": "A(32, 10, 64)와 B(10, 1)을 오른쪽 끝 차원부터 정렬하면 (32, 10, 64)와 (1, 10, 1)이 됩니다. 각 축에서 (64 vs 1), (10 vs 10), (32 vs 1)로 모두 조건(같거나 1)을 만족하므로 (32, 10, 64)로 성공적으로 브로드캐스팅됩니다."
+  },
+  {
+    "id": "P5-C-03",
+    "no": 63,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 17",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "NumPy에서 데이터를 물리적으로 복사하지 않고 메타데이터의 보폭(strides)만 변경하는 뷰(View) 연산이 아니라, 항상 독립적인 새로운 메모리 복사본(Copy)을 생성하거나 비연속 배열에서 복사를 유발할 수 있는 메서드는?",
+    "description": "",
+    "options": [
+      "arr.reshape() (가능한 경우 항상 View를 반환)",
+      "arr.flatten() (항상 새로운 1차원 Copy 배열을 할당하여 반환)",
+      "arr[:, :5] (기본 슬라이싱은 항상 View를 반환)",
+      "arr.T (전치 연산은 strides만 바꾼 View를 반환)"
+    ],
+    "answer": 2,
+    "explanation": "arr.ravel()은 가능한 한 메모리 복사 없이 뷰(View)를 반환하지만, arr.flatten()은 언제나 원본과 분리된 새로운 메모리를 할당하여 복사본(Copy)을 반환합니다."
+  },
+  {
+    "id": "P5-C-04",
+    "no": 64,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 17",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "트랜스포머 멀티헤드 어텐션에서 Query 텐서 Q의 형상이 (Batch=b, Head=h, Seq_Q=i, Dim=d)이고 Key 텐서 K의 형상이 (Batch=b, Head=h, Seq_K=j, Dim=d)일 때, np.einsum을 사용하여 배치와 헤드별로 내적 행렬(b, h, i, j)을 한 줄로 계산하는 올바른 아인슈타인 표기식은?",
+    "description": "",
+    "options": [
+      "np.einsum('bhid,bhjd->bhij', Q, K)",
+      "np.einsum('bhid,bhjd->bhd', Q, K)",
+      "np.einsum('ij,jk->ik', Q, K)",
+      "np.einsum('bhid->d', Q)"
+    ],
+    "answer": 1,
+    "explanation": "입력 인덱스 'bhid'와 'bhjd'에서 배치(b)와 헤드(h)는 유지하고, 임베딩 차원(d)에 대해 곱한 뒤 합산(축약)하여 시퀀스 차원 i와 j의 외적 형태인 'bhij'를 남기는 식은 'bhid,bhjd->bhij'입니다."
+  },
+  {
+    "id": "P5-C-05",
+    "no": 65,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 18",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "머신러닝 전처리 파이프라인에서 훈련 세트(X_train)와 테스트 세트(X_test)에 StandardScaler를 적용할 때 데이터 누수(Data Leakage)를 방지하는 올바른 코드 작성 패턴은?",
+    "description": "",
+    "options": [
+      "전체 데이터(X_all)에 먼저 fit_transform()을 수행한 뒤 train과 test로 분할한다.",
+      "X_train에 대해서만 scaler.fit_transform(X_train)을 수행하여 평균과 표준편차를 학습하고, X_test에 대해서는 학습된 통계량을 그대로 사용하여 scaler.transform(X_test)만 호출한다.",
+      "X_train과 X_test 각각에 대해 별도로 scaler.fit_transform()을 호출한다.",
+      "X_test에 먼저 fit()을 수행한 뒤 X_train에 transform()을 적용한다."
+    ],
+    "answer": 2,
+    "explanation": "테스트 데이터의 평균이나 표준편차가 학습 과정에 유입되면 미래 정보를 미리 훔쳐보는 데이터 누수(Data Leakage)가 발생합니다. 반드시 X_train에서만 fit()을 수행하고 X_test에는 transform()만 적용해야 합니다."
+  },
+  {
+    "id": "P5-C-06",
+    "no": 66,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 18",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "특성 스케일링 기법 중 데이터를 평균 0, 표준편차 1인 분포로 변환하는 StandardScaler(Z-Score 정규화)의 수식과 특징으로 가장 올바른 것은?",
+    "description": "",
+    "options": [
+      "z = (x - μ) / σ 수식을 사용하며, 최솟값과 최댓값이 [0, 1]로 엄격히 고정되지 않아 MinMaxScaler에 비해 극단적인 이상치(Outlier) 하나에 전체 스케일이 찌그러지는 현상이 덜하다.",
+      "z = (x - x_min) / (x_max - x_min) 수식을 사용하여 모든 값을 무조건 [0, 1] 사이에 가둔다.",
+      "결측치(NaN)를 자동으로 0으로 채워주는 함수이다.",
+      "범주형 문자열 데이터를 정수 인덱스로 바꾸는 인코더이다."
+    ],
+    "answer": 1,
+    "explanation": "StandardScaler는 Z-점수 수식 (x - μ) / σ 를 사용해 평균을 0, 분산을 1로 맞춥니다. 반면 MinMaxScaler는 (x - min)/(max - min)을 사용하므로 이상치 하나만 있어도 정상 데이터들이 좁은 구간에 뭉개집니다."
+  },
+  {
+    "id": "P5-C-07",
+    "no": 67,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 18",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "순서나 크기 의미가 전혀 없는 명목형 범주 변수(예: 거주 도시 = '서울', '부산', '대전')를 선형 회귀나 거리 기반 모델(KNN, SVM)에 입력할 때, 단순 정수(0, 1, 2)로 바꾸는 Label Encoding 대신 One-Hot Encoding을 사용해야 하는 이유는?",
+    "description": "",
+    "options": [
+      "Label Encoding을 적용하면 모델이 '서울(0) < 부산(1) < 대전(2)'과 같은 가짜 대소 관계나 '서울과 대전의 평균은 부산'이라는 왜곡된 산술적 거리를 학습해 버리기 때문이다.",
+      "One-Hot Encoding이 메모리 사용량을 항상 1/100로 줄여주기 때문이다.",
+      "파이썬에서는 정수를 배열에 저장할 수 없기 때문이다.",
+      "결정 트리(Decision Tree) 모델에서 정수 입력이 문법 에러를 일으키기 때문이다."
+    ],
+    "answer": 1,
+    "explanation": "명목형 변수에 0, 1, 2 같은 임의의 숫자를 부여하면 선형 모델이나 유클리디안 거리 기반 알고리즘이 숫자 크기를 실제 서열이나 거리로 오인합니다. 원-핫 인코딩은 각 범주를 서로 직교하는 독립 축([1,0,0], [0,1,0], [0,0,1])으로 분리해 등거리를 보장합니다."
+  },
+  {
+    "id": "P5-C-08",
+    "no": 68,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 18",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "연봉(Income)이나 부동산 거래가처럼 오른쪽 꼬리가 매우 긴 양의 왜도(Positive Skewness)를 가진 수치형 변수에서 결측치(NaN)를 대치(Imputation)할 때, 극단적 고액 이상치에 영향을 받지 않는 가장 강건한 대치 통계량은?",
+    "description": "",
+    "options": [
+      "산술 평균 (Mean)",
+      "중앙값 / 중위수 (Median)",
+      "최댓값 (Max)",
+      "분산 (Variance)"
+    ],
+    "answer": 2,
+    "explanation": "왜도가 심하거나 이상치가 존재하는 분포에서는 산술 평균(Mean)이 큰 값 쪽으로 심하게 끌려가므로, 순서상 정중앙에 위치하여 이상치에 영향을 받지 않는 중앙값(Median)으로 대치하는 것이 통계적으로 안전합니다."
+  },
+  {
+    "id": "P5-C-09",
+    "no": 69,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 19",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "Python의 typing.TypedDict 와 Pydantic v2의 BaseModel 의 결정적인 차이점으로 가장 올바른 것은?",
+    "description": "",
+    "options": [
+      "TypedDict는 정적 타입 체커(IDE/mypy)를 위한 힌트일 뿐 실행 시점(Runtime)에는 단순 dict로 동작하여 잘못된 타입을 막지 못하지만, Pydantic BaseModel은 런타임에 실제 데이터 타입 검증(Validation), 강제 형변환(Coercion), JSON Schema 추출을 수행한다.",
+      "TypedDict는 런타임에 ValidationError 예외를 발생시키고, Pydantic은 아무런 검증도 하지 않는다.",
+      "Pydantic BaseModel은 파이썬 2.7에서만 동작하는 레거시 모듈이다.",
+      "TypedDict는 JSON 직렬화가 불가능하고 오직 이진 파일로만 저장된다."
+    ],
+    "answer": 1,
+    "explanation": "Pydantic v2(Rust 기반 pydantic-core 엔진)는 런타임에 입력 데이터를 엄격히 검증하고 부적합한 데이터가 유입되면 즉시 ValidationError를 발생시켜 LLM의 불안정한 출력을 방어하는 핵심 가드레일 역할을 합니다."
+  },
+  {
+    "id": "P5-C-10",
+    "no": 70,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 19",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "Pydantic v2의 BaseModel에서 특정 필드(예: confidence: float)가 0.0 이상 1.0 이하의 값만 허용하도록 제약 조건을 걸고, LLM이 이 필드의 역할을 이해할 수 있도록 메타 설명을 추가하는 올바른 선언 코드는?",
+    "description": "from pydantic import BaseModel, Field",
+    "options": [
+      "confidence: float = Field(..., ge=0.0, le=1.0, description='예측 신뢰도 점수 (0.0~1.0)')",
+      "confidence: float = range(0, 1)",
+      "confidence: int = Field(max_length=1)",
+      "confidence: str = '0.0~1.0'"
+    ],
+    "answer": 1,
+    "explanation": "Pydantic Field에서 ge(greater than or equal to, ≥)와 le(less than or equal to, ≤)는 수치 범위를 검증하며, description 인자는 JSON Schema로 변환되어 LLM에게 해당 필드에 어떤 값을 채워야 하는지 알려주는 프롬프트 지침이 됩니다."
+  },
+  {
+    "id": "P5-C-11",
+    "no": 71,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 19",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "Pydantic v2 모델 클래스 SearchQuery(BaseModel) 로부터 OpenAI / Gemini / MCP 등의 Function Calling(Tool Calling) 및 Structured Outputs 규격에 전달할 표준 JSON Schema 딕셔너리를 추출하는 공식 메서드는?",
+    "description": "",
+    "options": [
+      "SearchQuery.model_json_schema()",
+      "SearchQuery.to_sql_table()",
+      "SearchQuery.compile_graph()",
+      "SearchQuery.fit_transform()"
+    ],
+    "answer": 1,
+    "explanation": "Pydantic v2에서는 클래스 메서드인 Model.model_json_schema() (v1의 schema() 대체)를 호출하면 각 필드의 타입, 제약 조건, description이 포함된 표준 JSON Schema 딕셔너리가 자동 생성됩니다."
+  },
+  {
+    "id": "P5-C-12",
+    "no": 72,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 19",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM이 반환한 JSON 문자열 raw_json = '{\"query\": \"벡터 DB\", \"top_k\": \"5\"}' 를 Pydantic v2 모델 인스턴스로 즉시 파싱함과 동시에 타입 검증(문자열 '5'를 정수 5로 변환 등)까지 한 번에 수행하는 고속 메서드는?",
+    "description": "",
+    "options": [
+      "SearchQuery.model_validate_json(raw_json)",
+      "SearchQuery.model_dump()",
+      "json.dumps(raw_json)",
+      "str.split(raw_json)"
+    ],
+    "answer": 1,
+    "explanation": "model_validate_json()은 파이썬 json.loads()를 거치지 않고 Rust로 작성된 pydantic-core 파서에서 직접 JSON 문자열을 파싱 및 검증하므로 속도가 훨씬 빠르고 엄격한 스키마 검증을 수행합니다."
+  },
+  {
+    "id": "P5-C-13",
+    "no": 73,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 20",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "응답에 각각 2초가 걸리는 독립적인 외부 LLM API 호출 코루틴 5개를 asyncio.gather(call_1(), call_2(), call_3(), call_4(), call_5()) 로 동시에 실행했을 때 전체 완료에 걸리는 이론적 총 소요 시간과 주의할 점은?",
+    "description": "",
+    "options": [
+      "네트워크 I/O 대기 시간이 겹쳐서(Non-blocking Concurrency) 처리되므로 총 약 2초 만에 완료된다. 단, 내부에서 time.sleep()이나 requests.get() 같은 동기 블로킹 함수를 호출하면 이벤트 루프 전체가 멈추므로 반드시 asyncio.sleep()이나 httpx.AsyncClient를 써야 한다.",
+      "순차 실행과 동일하게 정확히 10초(2초×5)가 소요된다.",
+      "파이썬은 비동기 처리를 지원하지 않아 구문 에러가 발생한다.",
+      "time.sleep(2)를 코루틴 내부에 넣어도 자동으로 비동기 병렬 처리된다."
+    ],
+    "answer": 1,
+    "explanation": "asyncio 이벤트 루프는 await 지점에서 네트워크 응답을 기다리는 동안 제어권을 다른 코루틴에 넘겨 5개의 I/O 작업을 동시에 대기하므로 약 2초 만에 끝납니다. 하지만 동기 함수(time.sleep 등)를 쓰면 단일 스레드 이벤트 루프 자체가 블로킹됩니다."
+  },
+  {
+    "id": "P5-C-14",
+    "no": 74,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 20",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "수백 개의 문서를 대상으로 비동기 LLM 임베딩 API를 동시에 호출할 때, API 서버의 분당/초당 동시 요청 제한(Rate Limit, HTTP 429 Too Many Requests)에 걸리지 않도록 동시 실행 코루틴 수를 최대 10개로 제한하는 asyncio 동기화 프리미티브는?",
+    "description": "",
+    "options": [
+      "asyncio.Semaphore(10) 와 async with sem: 블록 활용",
+      "asyncio.InfiniteLoop()",
+      "np.linalg.norm()",
+      "pd.DataFrame.dropna()"
+    ],
+    "answer": 1,
+    "explanation": "sem = asyncio.Semaphore(10)을 생성하고 코루틴 내부에서 async with sem: 블록으로 API 호출을 감싸면, 수백 개의 태스크를 gather()로 스케줄링하더라도 동시에 실행 중인 네트워크 요청 수는 항상 10개 이하로 안전하게 통제됩니다."
+  },
+  {
+    "id": "P5-C-15",
+    "no": 75,
+    "category": "실전 AI 파이썬 엔지니어링: 코드로 구현하는 차세대 시스템",
+    "chapter": "Day 20",
+    "type": "choice",
+    "timeLimit": 60,
+    "points": 2,
+    "title": "LLM의 답변 전체가 완성될 때까지 기다리지 않고 생성되는 토큰 조각(Chunk)을 실시간으로 yield 받아 화면에 타자 치듯 출력하는 비동기 제너레이터(Async Generator)를 소비(Consume)할 때 사용하는 파이썬 문법은?",
+    "description": "",
+    "options": [
+      "async for chunk in stream_tokens():",
+      "while True: time.sleep(10)",
+      "def sync_loop(stream):",
+      "import pickle; pickle.loads(stream)"
+    ],
+    "answer": 1,
+    "explanation": "async def 내부에서 yield를 사용하는 비동기 제너레이터(AsyncIterator)는 호출 측에서 async for chunk in async_gen(): 구문을 통해 매 청크가 도착할 때마다 논블로킹 방식으로 즉시 전달받아 첫 토큰 응답 지연 시간(TTFT)을 최소화합니다."
+  }
+]
